@@ -5,188 +5,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vinted Suppliers</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --texto: #735c53;
-  --boton: #deb8a0;
-  --borde: #735c53;
-  --fondo-arriba: #faeee4;
-  --fondo-abajo: #fdf6f1;
+:root{
+  --texto:#735c53;
+  --boton:#deb8a0;
+  --borde:#735c53;
+  --fondo-arriba:#faeee4;
+  --fondo-abajo:#fdf6f1;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  color:var(--texto);
+  background:linear-gradient(180deg,var(--fondo-arriba),var(--fondo-abajo));
+  background-attachment:fixed;
+  display:flex;
+  justify-content:center;
 }
-
-html, body {
-  min-height: 100%;
+.pagina{
+  width:100%;
+  max-width:560px;
+  padding:40px 22px 48px;
+  text-align:center;
 }
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--texto);
-  background: linear-gradient(180deg, var(--fondo-arriba), var(--fondo-abajo));
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
+.avatar{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid var(--borde);
+  background:#fff;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 22px;
 }
-
-.pagina {
-  width: 100%;
-  max-width: 560px;
-  padding: 40px 22px 48px;
-  text-align: center;
+h1{
+  font-family:'Libre Baskerville',serif;
+  font-weight:400;
+  font-size:2.4rem;
+  margin-bottom:18px;
 }
-
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--borde);
-  background: white;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 22px;
+.redes{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  margin-bottom:34px;
 }
-
-h1 {
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 400;
-  font-size: 2.4rem;
-  margin-bottom: 18px;
+.redes a{
+  color:var(--texto);
+  display:inline-flex;
+  transition:transform .15s;
 }
-
-.redes {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-  margin-bottom: 34px;
+.redes a:hover{transform:scale(1.12)}
+.redes svg{
+  width:30px;
+  height:30px;
+  fill:currentColor;
 }
-
-.redes a {
-  color: var(--texto);
-  display: inline-flex;
-  transition: transform .15s;
+.enlaces{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 }
-
-.redes a:hover {
-  transform: scale(1.12);
+.boton{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:66px;
+  padding:0 54px;
+  background:var(--boton);
+  border:3px solid var(--borde);
+  border-radius:14px;
+  color:var(--texto);
+  text-decoration:none;
+  font-size:1.15rem;
+  transition:transform .15s,box-shadow .15s;
 }
-
-.redes svg {
-  width: 30px;
-  height: 30px;
-  fill: currentColor;
+.boton:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(115,92,83,.25);
 }
-
-.redes .mail svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
+.boton:active{transform:scale(.98)}
+.boton .icono{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:46px;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-
-.enlaces {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.boton .icono svg{
+  width:100%;
+  height:100%;
 }
-
-.boton {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 66px;
-  padding: 0 54px;
-  background: var(--boton);
-  border: 3px solid var(--borde);
-  border-radius: 14px;
-  color: var(--texto);
-  text-decoration: none;
-  font-size: 1.15rem;
-  transition: transform .15s, box-shadow .15s;
+.boton .puntos{
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:3px;
 }
-
-.boton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(115,92,83,.25);
-}
-
-.boton:active {
-  transform: scale(.98);
-}
-
-.boton .icono {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boton .icono svg {
-  width: 100%;
-  height: 100%;
-}
-
-.boton .puntos {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.boton .puntos i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--texto);
-  opacity: .8;
+.boton .puntos i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--texto);
+  opacity:.8;
 }
 </style>
 </head>
-
 <body>
 <main class="pagina">
 
-  <img class="avatar" src="TU_IMAGEN_DE_PERFIL" alt="Vinted Suppliers">
+  <!-- Imagen de perfil original -->
+  <img class="avatar" src="data:image/jpeg;base64,AVATAR_BASE64_COMPLETO" alt="Vinted Suppliers">
 
   <h1>Vinted Suppliers</h1>
 
+  <!-- Solo icono de TikTok -->
   <div class="redes">
-
     <a href="https://www.tiktok.com/@oofertazone"
        target="_blank" rel="noopener" aria-label="TikTok">
       <svg viewBox="0 0 24 24">
         <path d="M19.6 6.7a5.4 5.4 0 0 1-3.3-1.1 5.4 5.4 0 0 1-2.1-3.6h-3.3v13.1a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.1a6 6 0 1 0 5.2 5.9V9.2a8.7 8.7 0 0 0 5.4 1.8z"/>
       </svg>
     </a>
-
-    <a class="mail" href="mailto:TUCORREO@EJEMPLO.COM" aria-label="Email">
-      <svg viewBox="0 0 24 24">
-        <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
-        <path d="m3 6 9 7 9-7"/>
-      </svg>
-    </a>
-
   </div>
 
+  <!-- Botones -->
   <div class="enlaces">
 
     <!-- TikTok -->
@@ -230,7 +185,6 @@ h1 {
     </a>
 
   </div>
-
 </main>
 </body>
 </html>
